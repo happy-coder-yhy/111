@@ -1,0 +1,193 @@
+/* pages/inputCity/inputCity.wxss */
+.all {
+  margin: 10rpx auto;
+  width: 95%;
+  height: 1200rpx;
+  overflow: auto;
+  /* background-color: pink; */
+}
+.route {
+  margin-bottom: 40rpx;
+  padding: 20rpx;
+  height: 740rpx;
+  background-color: #eee;
+  border-radius: 15rpx;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+}
+.title1 {
+  margin-bottom: 20rpx;
+  color: rgb(180, 43, 88);
+  font-size: 50rpx;
+}
+.scroll-area {
+  height: 610rpx;
+
+  overflow: hidden;
+}
+.property {
+  display: inline-block;
+}
+.tomorrowInfo {
+  margin-bottom: 10rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid black;
+}
+.index {
+  position: relative;
+  margin-top: 40rpx;
+  width: 100%;
+  height: 960rpx;
+}
+
+.indexGraph {
+  display: flex;
+  width: 100%;
+  height: 800rpx;
+  background-color: #eee;
+  border-radius: 15rpx;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.5);
+}
+.left {
+  width: 120rpx;
+}
+.leftTop {
+  width: 100%;
+  height: 150rpx;
+  /* background-color: pink; */
+}
+.date {
+  position: absolute;
+  top: 19%;
+  left: 4.5%;
+}
+.slice {
+  width: 169rpx;
+  height: 169rpx;
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  rotate: 45deg;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+.idx {
+  position: absolute;
+  top: 11.7%;
+  left: 10%;
+}
+.yAxis {
+  display: flex;
+  /* background-color: pink; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 650rpx;
+}
+.right {
+  flex: 1;
+}
+.graph {
+  position: absolute;
+  width: 592.5rpx;
+  padding-top: 30rpx;
+  height: 680rpx;
+  background-color: skyblue;
+  border-radius: 0 0 15rpx 0;
+  border-left: 2px solid rgb(0, 0, 0, 0.8);
+  border-top: 2px solid rgb(0, 0, 0, 0.8);
+}
+.colarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 650rpx;
+  /* background-color: skyblue; */
+}
+
+.col {
+  padding-right: 10rpx;
+  height: 40rpx;
+  background-color: rgb(139, 0, 139);
+  text-align: right;
+  color: white;
+}
+.xAxis {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 120rpx;
+
+}
+.deg {
+  width: 98.75rpx;
+  text-align: center;
+}
+.deg:nth-child(-n+6) {
+  line-height: 48px;
+  font-size: 20px;
+}
+.deg:nth-child(n+7) {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.info {
+  font-size: 18px;
+}
+
+.postpone {
+  display: inline-block;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+input {
+  display: inline-block;
+  margin-top: 30rpx;
+  margin-right: 15rpx;
+  padding-left: 12rpx;
+  width: 45%;
+  height: 80rpx;
+  border: 1px solid gray;
+  border-radius: 15rpx;
+}
+
+.btn {
+  margin: 20rpx;
+  background-color: rgb(122, 78, 165);
+  border-radius: 15rpx;
+  color: white;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+}
+
+.result {
+  margin-right: 20rpx;
+  padding-left: 10rpx;
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-weight: bold;
+  border: 1px solid green;
+  overflow: hidden;
+}
+
+.tips {
+  margin-top: 20rpx;
+  height: 80rpx;
+  background-color: lightgreen;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+  box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.3);
+}
+
+.backToList {
+  margin-top: 50rpx;
+  background-color: lightpink;
+  color: white;
+  border-radius: 20rpx;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}

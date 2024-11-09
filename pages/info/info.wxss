@@ -1,0 +1,12 @@
+/* pages/info/info.wxss */
+navigator {
+  margin: 20rpx auto;
+  width: 200rpx;
+  height: 100rpx;
+  background-color: #efefef;
+  text-align: center;
+  line-height: 100rpx;
+}
+button {
+  margin-top: 20rpx;
+}

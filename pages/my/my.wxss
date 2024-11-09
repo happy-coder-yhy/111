@@ -1,0 +1,117 @@
+/* pages/my/my.wxss */
+.background {
+  /* position: absolute; */
+  width: 100%;
+  height: 150px;
+  background-color: #00b26a;
+  border-radius: 0 0 30px 30px;
+}
+.display {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 155px;
+  background-color: rgb(236, 234, 204);
+  border-radius: 10px;
+  color: #8ea881;
+  /* box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5); */
+}
+.display button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  text-align: center;
+}
+.head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+/* .bless {
+  margin: 30rpx;
+  color: rgb(45, 151, 45);
+  font-size: 30px;
+  
+} */
+.info {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 80%;
+  height: 300px;
+  background-color: rgb(236, 234, 204);
+  border-radius: 20px;
+  color: #8ea881;
+
+}
+.info image {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 35px;
+  height: 35px;
+}
+.row {
+  position: relative;
+  padding-left: 60px;
+  height: 45px;
+  border-bottom: 1px solid #8ea881;
+  line-height: 45px;
+  font-size: 18px;
+}
+.info navigator {
+  margin-top: 20rpx;
+  text-align: right;
+  text-decoration: underline;
+  color: rgb(185, 75, 75);
+  font-size: 20px;
+}
+.info button {
+  margin-top: 100rpx;
+  border-radius: 10px;
+  background-color: #8ea881;
+  color: #ffffff;
+}
+.toLogin {
+  margin-bottom: 10rpx;
+  /* text-align: center; */
+  color: #aca7a7;
+  font-size: 20px;
+}
+.spot {
+  position: absolute;
+  top: 37%;
+  left: 2%;
+  width: 25rpx;
+  height: 25rpx;
+  background-color: rgba(142, 168, 129, 0.6);
+  border-radius: 50%;
+}
+.tip {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  color: rgb(182, 88, 103);
+  font-size: 22px;
+}
+.pswChange {
+  position: absolute;
+  top: 70%;
+  right: 5%;
+}

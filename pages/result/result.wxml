@@ -1,0 +1,90 @@
+<!--pages/inputCity/inputCity.wxml-->
+<!-- <view class="container"> -->
+<scroll-view class="all" scroll-y type="list">
+  <block wx:if="{{predictResult}}">
+    <view class="route" wx:if="{{isFromPlan === 'false'}}">
+      <view class="title1">明日拥堵路段</view>
+      <scroll-view class="scroll-area" scroll-y type="list">
+        <block wx:for="{{predictResult.road_data}}" wx:key="*this">
+          <view class="tomorrowInfo">
+            <view><view class="property" style="color: rgb(75, 165, 192);">路段：</view>{{item.cityName}}</view>
+            <view><view class="property" style="color: rgb(223, 140, 153);">方向：</view>{{item.dir}}</view>
+            <view><view class="property" style="color: green;">预计通过速度：</view>{{item.speed}} km/h</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <block wx:if="{{isFromPlan != 'false'}}">
+      <view class="info">
+        <view style="margin-top: 20rpx;">
+          出行日期:{{' ' + date}}
+        </view>
+        <view style="margin-top: 20rpx;">
+          出行时间:{{' 北京时间' + ' ' + time}}
+        </view>
+        <block wx:for="{{predictResult.pre_data}}" wx:key="*this">
+          <view style="margin-top: 20rpx;" wx:if="{{d === item.dt}}">
+            <!-- 当日平均拥堵指数:
+            <view class="postpone" style="color: rgb({{(item.idx - 1) * 255}}, {{(2 - item.idx) * 255}}, 0);">{{' ' + item.idx}}</view> -->
+            <view wx:if="{{City === '北京'}}">
+              <input type="text" placeholder="距离(km)" bindinput="distanceInput"/>
+              <input type="text" placeholder="正常通行时间(min)" bindinput="smoothTimeInput"/>
+              <button class="btn" style="margin-left: 0; width: 97%;" bind:tap="predict">模型预测</button>
+              <view class="line">
+                预测结果：<view class="result" style="color: rgb({{(item.idx - 1) * 255}}, {{(2 - item.idx) * 255}}, 0); font-size: {{resultFontSize}};">{{((processingDistance + processingTime + (item.idx - 1)/1.5*0.4)*1.5+1)*smoothTime}}</view> 分钟
+              </view>
+            </view>
+            <view class="tips" wx:if="{{item.idx >= 1.5}}">
+              该时段为 <view style="display: inline-block; color: red; font-size: 20px;" wx:if="{{period}}">
+                {{period}} 
+              </view>
+              请提前做好规划
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <view class="index">
+      <view class="title1">未来七日{{City}}的拥堵指数</view>
+      <view class="indexGraph">
+        <view class="left">
+          <view class="leftTop">
+            <view class="date">日期</view>
+            <view class="slice"></view>
+            <view class="idx">指数</view>
+          </view>
+          <view class="yAxis">
+            <view wx:for="{{predictResult.pre_data}}" wx:key="*this">{{item.dt}}</view>
+          </view>
+        </view>
+        <view class="right">
+          <view class="xAxis">
+            <view class="deg">1.0</view>
+            <view class="deg">1.25</view>
+            <view class="deg">1.5</view>
+            <view class="deg">1.75</view>
+            <view class="deg">2.0</view>
+            <view class="deg">2.25</view>
+            <view class="deg">|</view>
+            <view class="deg">|</view>
+            <view class="deg">|</view>
+            <view class="deg">|</view>
+            <view class="deg">|</view>
+            <view class="deg">|</view>
+          </view>
+          <view class="graph">
+            <view class="colarea">
+              <view class="col" wx:for="{{predictResult.pre_data}}" wx:key="*this" style="width: {{(item.idx - 1)/ 0.25 * 98.0833 + 45.04167}}rpx; background-color: rgb({{(item.idx - 1) * 255}}, {{(2 - item.idx) * 255}}, 0);">{{item.idx}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- <block wx:for="{{predictResult.pre_data}}" wx:key="*this">
+        <view>{{item.dt}} - {{item.idx}}</view>
+      </block> -->
+    </view>
+    
+  </block>
+</scroll-view>
+<button class="backToList" wx:if="{{isFromPlan != 'false'}}" bind:tap="backToList">返回出行计划表</button>
+<!-- </view> -->

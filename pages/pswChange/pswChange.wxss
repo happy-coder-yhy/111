@@ -1,0 +1,76 @@
+/* pages/pswChange/pswChange.wxss */
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 550rpx;
+  /* background-color: pink; */
+  border: 2px solid darkseagreen;
+  border-radius: 20rpx;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+}
+.tip {
+  color: rgb(207, 50, 50);
+  font-size: 22px;
+  font-weight: 500;
+}
+.modal input {
+  padding-left: 20rpx;
+  width: 60%;
+  height: 80rpx;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 15rpx;
+  text-align: center;
+  /* transform: translateX(-50%);
+  transition: all 1s; */
+}
+.modal button {
+  width: 50%;
+  background-color: skyblue;
+  color: white;
+}
+
+.process {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 18rpx;
+  /* background-color: pink; */
+}
+
+.step {
+  width: 150rpx;
+  border-radius: 12rpx;
+  transition: all ease 1s;
+}
+
+.step:nth-child(1) {
+  background-color: rgb(151, 184, 109);
+}
+
+.step:nth-child(2) {
+  opacity: 0;
+  background-color: rgb(120, 199, 175);
+}
+.step:nth-child(3) {
+  opacity: 0;
+  background-color: rgb(149, 121, 201);
+}
+.cancel {
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(207, 50, 50);
+  color: white;
+}
+button {
+  border-radius: 15rpx;
+}

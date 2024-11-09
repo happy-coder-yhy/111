@@ -1,0 +1,186 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.background {
+  position: absolute;
+  width: 100%;
+  height: 1300rpx;
+}
+.scrollarea {
+  margin: 20rpx;
+  flex: 1;
+  width: 95%;
+  overflow-y: hidden;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+  width: 80%;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 56px !important;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+}
+
+.nickname-wrapper {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  border-top: .5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.nickname-label {
+  width: 105px;
+}
+
+.nickname-input {
+  flex: 1;
+}
+
+.swiper-container {
+  height: 400rpx;
+}
+.item {
+  height: 100%;
+  text-align: center;
+  line-height: 400rpx;
+}
+.scrollPic {
+  width: 100%;
+  height: 100%;
+}
+swiper-item:nth-child(1) {
+  background-color: lightgreen;
+}
+swiper-item:nth-child(2) {
+  background-color: lightskyblue;
+}
+swiper-item:nth-child(3) {
+  background-color: lightgoldenrodyellow;
+}
+.wrapper {
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 135px;
+  background-color: #eec8c8;
+  border-radius: 20rpx;
+  /* line-height: 100px; */
+  font-size: 30px;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100px;
+  height: 130px;
+  opacity: 1;
+}
+.pic {
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.option text {
+  color: white;
+  font-size: 20px;
+}
+.sec {
+  display: flex;
+  width: 100%;
+  height: 110px;
+  background-color: skyblue;
+}
+.scroll {
+  padding: 5px;
+  width: 150px;
+  height: 100px;
+  background-color: skyblue;
+  overflow: auto;
+}
+.area {
+  margin: 5px;
+  width: 135px;
+  height: 90px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 90px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+}
+.sec text {
+  flex: 1;
+  text-align: center;
+  line-height: 110px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #eeeeee;
+}
+
+/* image {
+  border: 1px solid red;
+} */
+
+.piaoshu {
+  margin: 10px auto;
+  width: 132px;
+  height: 32px;
+  background-color: pink;
+  text-align: center;
+  line-height: 32px;
+}
+
+button {
+  margin: 10px;
+}
+
+input {
+  margin: 5px auto;
+  padding: 5px;
+  width: 50%;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+.bottom {
+  margin: 20rpx 10rpx;
+  color: white;
+}

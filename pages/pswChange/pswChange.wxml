@@ -1,0 +1,20 @@
+<!--pages/pswChange/pswChange.wxml-->
+<form bindsubmit="">
+  <view class="modal">
+    <view class="tip" wx:if="{{!isOldPswRight}}">请输入旧密码</view>
+    <view class="tip" wx:if="{{isOldPswRight && !isNewPswLegal}}">请输入新密码</view>
+    <view class="tip" wx:if="{{isNewPswLegal}}">请再次确认密码</view>
+    <input type="password" bind:input="oldPswInput" wx:if="{{!isNewPswLegal}}"/>
+    <input type="password" bind:input="checkNewPsw" wx:if="{{isNewPswLegal}}"/>
+    <button bind:tap="nextStep" form-type="reset" wx:if="{{!isOldPswRight}}">下一步</button>
+    <button bind:tap="nextStep1" form-type="reset" wx:if="{{isOldPswRight && !isNewPswLegal}}">下一步</button>
+    <button bind:tap="assure" form-type="reset" wx:if="{{isNewPswLegal}}">确认</button>
+    <view class="process">
+      <view class="step"></view>
+      <view class="step" style="opacity: {{opacity1}};"></view>
+      <view class="step" style="opacity: {{opacity2}};"></view>
+    </view>
+  </view>
+</form>
+<button class="cancel" style="width: 276rpx;" bind:tap="cancel">取消</button>
+

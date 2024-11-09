@@ -1,0 +1,9 @@
+<!-- predict.wxml -->
+<image src="/image/background.jpg" class="background" mode=""/>
+<view class="container">
+  <form bindsubmit="">
+    <input class="input" type="text" placeholder="请输入城市" value="{{city}}" bindinput="bindCityInput" />
+    <button class="getResult" style="width: 500rpx;" bindtap="getPredictData">获取预测数据</button>
+  </form>
+  <!-- <view class="error" wx:if="{{!isCityExist}}">{{error}}</view> -->
+</view>

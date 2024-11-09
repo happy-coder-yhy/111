@@ -1,0 +1,51 @@
+<!--pages/my/my.wxml-->
+<view class="background"></view>
+<block wx:if="{{isLogin}}">
+  <view class="display">
+    <button open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image src="{{userInfo.avatarUrl}}" class="head" mode=""/>
+    </button>
+    点击设置或更改头像
+  </view>
+  <view class="info">
+    <view class="row">
+      <image src="/image/user2.png" mode=""/>
+      {{userInfo.nickName}}
+    </view>
+    <!-- <view class="row">
+      <image src="/image/phone1.png" style="top:18%; left: 7%; width: 25px; height: 25px;" mode=""/>
+      <view>{{m1.pnum(userInfo.pn)}}</view>
+    </view> -->
+    <view class="row">
+      <image src="/image/tabBar/list.png" style="top: 8%; left: 4%;" mode=""/>
+      <view>{{num}}条待出行计划</view>
+    </view>
+    <navigator url="/pages/pswChange/pswChange" class="pswChange">点我修改密码</navigator>
+    <!-- <button bind:tap="exit">退出登录</button> -->
+  </view>
+</block>
+<block wx:else>
+  <view class="display">
+    <button bind:tap="gotoLogin">
+      <image src="{{defaultAvatarUrl}}" class="head" mode=""/>
+    </button>
+    点击登录
+  </view>
+  <view class="info">
+    <view class="toLogin">登录后，您将可以：</view>
+    <view class="row" style="padding-left: 46rpx;"><view class="spot"></view> 制定个人的出行计划表</view>
+    <view class="row" style="padding-left: 46rpx;"><view class="spot"></view> 根据出行计划进行路径规划</view>
+    <view class="row" style="padding-left: 46rpx;"><view class="spot"></view> 查看个人信息</view>
+    <view class="tip">登录获得更佳使用体验</view>
+  </view>
+</block>
+<wxs module="m1">
+    module.exports.pnum = function(num) {
+      var arr = num.split('')
+      arr.splice(3, 4)
+      for(var i = 0; i < 4; i++) {
+        arr.splice(3, 0, 'X')
+      }
+      return arr.join('')
+    }
+  </wxs>

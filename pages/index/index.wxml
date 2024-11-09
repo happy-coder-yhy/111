@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<image src="/image/background.jpg" class="background" mode=""/>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <swiper class="swiper-container" indicator-dots autoplay interval="5000" circular>
+    <swiper-item>
+      <!-- <view class="item">A</view> -->
+      <image src="/image/picA.jpg" class="scrollPic" mode=""/>
+    </swiper-item>
+    <swiper-item>
+      <!-- <view class="item">B</view> -->
+      <image src="/image/picB.jpg" class="scrollPic" mode=""/>
+    </swiper-item>
+    <!-- <swiper-item>
+      <view class="item"><image src="/image/picC.jpg" class="scrollPic" mode=""/></view>
+    </swiper-item> -->
+  </swiper>
+  <view class="wrapper">
+    <navigator url="/pages/predict/predict" class="option" open-type="navigate">
+      <view class="pic"></view>
+      <text>流量预测</text>
+    </navigator>
+  </view>
+
+  <view class="bottom">
+    联系开发者
+    <text user-select>{{m1.pnum(pnum)}}</text>
+  </view>
+  <wxs module="m1">
+    module.exports.pnum = function(num) {
+      var arr = num.split('')
+      arr.splice(3, 0, '-')
+      arr.splice(8, 0, '-')
+      return arr.join('')
+    }
+  </wxs>
+</scroll-view>

@@ -1,0 +1,44 @@
+<!--pages/innerLogin/innerLogin.wxml-->
+
+<view class="border">
+  <!-- <image src="/image/cauc.png" class="img" mode=""/> -->
+  <view class="welcome">欢迎使用预测通</view>
+  <view class="userinfo">
+    <block wx:if="{{canIUseNicknameComp}}">
+      <!-- <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+        <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      </button> -->
+      <form bindsubmit="">
+        <view class="nickname-wrapper" style="top: 33%; left: 50%; width: 300px;">
+          <text class="nickname-label">昵称</text>
+          <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange1" />
+        </view>
+        <rich-text nodes="<br>"/>
+        <view class="nickname-wrapper" style="top: 44%; left: 50%; width: 300px;">
+          <text class="nickname-label">密码</text>
+          <input type="password" class="nickname-input" placeholder="请输入密码" bind:change="onInputChange2" />
+        </view>
+        <button class="btn" style="width: 80%;" bind:tap="login" open-type="switchTab" form-type="reset">登录</button>
+      </form>
+      
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <view wx:else> 请使用2.10.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!-- <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+
+  <view class="tip">
+    还未注册？
+    <navigator class="navi" url="/pages/register/register">点我注册</navigator>
+  </view>
+  <!-- <navigator class="forget" url="">忘记密码?</navigator> -->
+</view>
+    

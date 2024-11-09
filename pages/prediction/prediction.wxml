@@ -1,0 +1,18 @@
+<!--pages/prediction/prediction.wxml-->
+<text class="red-text">流量预测</text>
+<view></view>
+<!-- 局部引用 -->
+<test1 max="5" num="{{num}}" class="x">
+  <!-- <view slot="after">----</view>
+  <view slot="before">插槽</view> -->
+</test1>
+
+<!-- <button type="primary" bind:tap="getChild">+1</button> -->
+
+<view>{{numA}} + {{numB}} = {{sum}}</view>
+<button size="mini" type="primary" bind:tap="btnHandler" data-step="{{1}}"> + 1</button>
+<button size="mini" type="warn" bind:tap="btnHandler" data-step="{{-1}}"> - 1 </button>
+
+<button type="primary" bind:tap="test">1</button>
+<!-- 全局引用 -->
+<!-- <test2></test2> -->

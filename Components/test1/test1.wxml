@@ -1,0 +1,12 @@
+<!--Components/test1/test1.wxml-->
+<button class="pre" type="primary" bindtap="pre">预测</button>
+<!-- <view>{{num}}</view> -->
+
+<!-- 插槽占位 -->
+<slot name="before"></slot> 
+<slot name="after"></slot>
+<!-- <view>{{n1}} + {{n2}} = {{sum}}</view>
+<view class="plus">
+  <button size="mini" bindtap="addN1">n1+1</button>
+  <button size="mini" bindtap="addN2">n2+2</button>
+</view> -->

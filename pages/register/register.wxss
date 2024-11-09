@@ -1,0 +1,84 @@
+/* pages/register/register.wxss */
+/* pages/home/home.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+  width: 80%;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 120px !important;
+  height: 120px;
+  border-radius: 60px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  text-align: center;
+  line-height: 75px;
+}
+
+.avatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.tip {
+  margin: 12px;
+}
+
+.nickname-wrapper {
+  display: flex;
+  width: 300px;
+  padding: 16px;
+  box-sizing: border-box;
+  border: .5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: black;
+}
+
+.nickname-label {
+  width: 45px;
+}
+
+.nickname-input {
+  flex: 1;
+}
+
+
+.register {
+  height: 50px;
+  margin-top: 20px;
+  background-color: rgb(238, 143, 161);
+  line-height: 36px;
+  color: white;
+  font-size: 20px;
+  border-radius: 15px;
+}

@@ -1,0 +1,84 @@
+<!--pages/list/list.wxml-->
+<block wx:if="{{isLogin}}">
+  <form bindsubmit="">
+    <!-- <input type="text" value="{{date}}" placeholder="日期(xx/xx/xx)" bind:tap="date"/> -->
+    <view style="display: flex;">
+      <picker bindchange="bindDateChange" value="{{temp + 1}}" range="{{dateList}}">
+        <view class="picker" style="color: black;">
+          <view style="color: gray;" wx:if="{{temp === -1}}">日期(xx/xx/xx)</view>
+          {{dateList[temp]}}
+        </view>
+      </picker>
+      <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+        <view class="picker">
+          <view style="color: gray;" wx:if="{{time === ''}}">时间(hh:mm:ss)</view>
+          {{time}}
+        </view>
+      </picker>
+    </view>
+    
+    <!-- <input type="text" placeholder="时间(hh:mm:ss)" bindinput="time"/>   -->
+    <input type="text" placeholder="出发地" bindinput="departure"/>
+    <input type="text" placeholder="目的地" bindinput="dest"/>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+      <view class="picker" style="width: 95%;">
+        地区：{{region[0]}} 
+        <block wx:if="{{region[0] != region[1]}}">
+          {{region[1] }}
+        </block>
+        {{region[2]}}
+      </view>
+    </picker>
+    <button size="default" type="primary" form-type="reset" bindtap="assure">确认行程</button>
+    <!-- <button size="mini" type="primary" bindtap="cancel" data-info="{{1}}">取消行程</button> -->
+  </form>
+  <view class="list">
+    <view style="position: relative; margin: 20rpx 10rpx; display: flex; justify-content: space-between;">
+      <view class="num">出行计划:{{num}}</view>
+      <view class="autoDelete" bind:tap="autoDelete">
+        <image src="/image/delete.png" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 30px; height:30px;"/>
+      清理
+      </view>
+      <view class="tip">点击查看最优路径</view>
+    </view>
+    <scroll-view class="scroll-list" scroll-y type="list">
+    <block wx:for="{{plan}}" wx:key="index">
+      <view class="plan">
+        <view class="content">
+          <view class="contentTime">
+            {{item.time}}
+          </view>
+          <view class="contentDeparture">
+            <span class="emphasis">from</span>
+            {{item.departure}} 
+          </view>
+          <view class="contentDest">
+            <span class="emphasis">to</span>  {{item.dest}}
+          </view>
+          <view class="contentCity">
+            <span class="emphasis">城市:</span> {{item.city}}
+            <navigator url="/pages/predict/predict?city={{item.city}}&date={{item.time}}" class="gotoPredict" wx:if="{{item.city === '北京市'}}">点击预测</navigator>
+          </view>
+        </view>
+        <button class="routePlan" size="mini" bind:tap="routePlan" data-id="{{index}}">规划</button>
+        <button class="cancel" size="mini" bind:tap="delete" data-id="{{index}}">删除</button>
+      </view>
+    </block>
+    <!-- <button bind:tap="jump">跳转</button> -->
+    </scroll-view>
+    <!-- <button type="primary" bind:tap="jump">跳转</button> -->
+    <!-- <view class="box"></view> -->
+  </view>
+  <view style="position: absolute; top: 60%;">
+    
+    
+  </view>
+</block>
+<block wx:else>
+  <!-- <view class="roadTop"></view>
+  <view class="roadBottom"></view> -->
+  <image src="/image/lock.png" class="lock" mode=""/>
+  <view class="modal">登录体验完整功能</view>
+</block>
+
+<!-- <button type="primary" bindtap="clear">重置</button> -->

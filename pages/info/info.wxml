@@ -1,0 +1,6 @@
+<!--pages/info/info.wxml-->
+<text>路线规划</text>
+<navigator open-type="navigateBack" delta="1">返回</navigator>
+<!-- 编程式导航 navigateTo({url}), navigateBack({delta}), switchTab({url})-->
+<button bindtap="gotoPlan" type="primary">出行计划</button>
+<button bindtap="gotoPre" type="primary">流量预测</button>
