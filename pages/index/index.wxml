@@ -10,9 +10,7 @@
       <!-- <view class="item">B</view> -->
       <image src="/image/picB.jpg" class="scrollPic" mode=""/>
     </swiper-item>
-    <!-- <swiper-item>
-      <view class="item"><image src="/image/picC.jpg" class="scrollPic" mode=""/></view>
-    </swiper-item> -->
+
   </swiper>
   <view class="wrapper">
     <navigator url="/pages/predict/predict" class="option" open-type="navigate">
