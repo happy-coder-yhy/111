@@ -3,7 +3,6 @@
 <scroll-view class="scrollarea" scroll-y type="list">
   <swiper class="swiper-container" indicator-dots autoplay interval="5000" circular>
     <swiper-item>
-      <!-- <view class="item">A</view> -->
       <image src="/image/picA.jpg" class="scrollPic" mode=""/>
     </swiper-item>
     <swiper-item>
